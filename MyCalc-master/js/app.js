@@ -39,7 +39,7 @@ buttons.forEach((btn) => {
             // Executar e mostrar a resposta em tempo real
             if (btn.classList.contains('num_btn')) {
 
-                answerScreen.innerHTML = eval(realTimeScreenValue.join(''));
+                answerScreen.innerHTML = Function(realTimeScreenValue.join('')();
 
             }
 
@@ -49,7 +49,7 @@ buttons.forEach((btn) => {
         if (btn.id.match('erase')) {
             realTimeScreenValue.pop();
             currentInput.innerHTML = realTimeScreenValue.join('');
-            answerScreen.innerHTML = eval(realTimeScreenValue.join(''));
+            answerScreen.innerHTML = Function(realTimeScreenValue.join(''))();
         }
 
         // Ao clicar em igual
@@ -60,7 +60,7 @@ buttons.forEach((btn) => {
         }
 
         // Previnir erro de undefined
-        if (typeof eval(realTimeScreenValue.join('')) == 'undefined') {
+        if (typeof Function(realTimeScreenValue.join(''))() == 'undefined') {
             answerScreen.innerHTML = 0
         }
 
